@@ -5,6 +5,10 @@
     border-bottom: 1px solid var(--base-gray-100);
     padding-bottom: 32px;
 
+    /* Cria uma variavel para contar o numero de passos
+        - Inicialmente nossa variavel 'step' vale 0
+    */
+    counter-reset: step;
 }
 
 .steps strong{
@@ -22,7 +26,9 @@
 .steps strong::before{
     font-family: 'Titillium Web', sans-serif;
     color: var(--base-gray-200);
-    content: "1";
+    /* Atribui a variavel step ao conteudo toda vez que encontrar algo do tipo e incrementa ++ ao step que antes valia 0 */
+    content: counter(step); 
+    counter-increment: step;
     font-size: 14px;
     background-color: var(--base-gray-100);
     width: 2.8rem;
@@ -36,6 +42,12 @@
 
 .steps strong.active::before{
     background-color: var(--produto-purple-mid);
-    color: white;
+    color: var(--base-white);
     
+}
+
+.steps strong.done::before{
+    content: '✔';
+    color: var(--base-white);
+    background-color: var(--feedback-sucess-color);
 }
