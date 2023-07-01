@@ -1,0 +1,40 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+    --base-white: #ffffff;
+    --base-gray-100: #e1e1e6;
+    --base-gray-200: #8d8d99;
+    --base-gray-300: #7c7c8a;
+    --base-gray-400: #323238;
+    --feedback-sucess-color: #1d8841;
+    --produto-purple-light: #8257e5;
+    --produto-purple-mid: #633bbc;
+
+    font-size: 62.5%;
+  
+  }
+  
+html *{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.6rem;
+}
+
+body{
+  
+  /*Dessa maneira alinha o elemento ao centro muito bom quando temos apenas uma grande div posicionada ao centro*/
+  
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.container{
+  padding: 32px;
+  border: 1px solid var(--base-gray-100);
+}
+

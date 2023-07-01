@@ -1,0 +1,41 @@
+.steps{
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+    border-bottom: 1px solid var(--base-gray-100);
+    padding-bottom: 32px;
+
+}
+
+.steps strong{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 8px;
+    color: var(--base-gray-200);
+}
+
+.steps strong.active{
+    color: var(--base-gray-400);
+}
+
+.steps strong::before{
+    font-family: 'Titillium Web', sans-serif;
+    color: var(--base-gray-200);
+    content: "1";
+    font-size: 14px;
+    background-color: var(--base-gray-100);
+    width: 2.8rem;
+    height: 2.8rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.steps strong.active::before{
+    background-color: var(--produto-purple-mid);
+    color: white;
+    
+}
