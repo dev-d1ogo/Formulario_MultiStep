@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
+    flex-wrap: wrap;
+    width: 592px;
 }
 
 label{
@@ -12,6 +14,7 @@ label{
 
 .step-form.active{
     display: block;
+    flex-wrap: wrap;
 }
 
 input, textarea{
@@ -21,6 +24,7 @@ input, textarea{
     gap: 1.6rem;
     padding: 1.6rem;
     border: 1px solid var(--base-gray-100);
+    
 }
 
 textarea{

@@ -64,3 +64,10 @@ body{
 .hide{
   display: none;
 }
+
+
+@media(min-width:700px){
+  :root{
+    display: inline;
+  }
+}
