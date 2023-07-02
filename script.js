@@ -9,6 +9,9 @@ form.addEventListener('click', (e) =>{
     // Verifica se onde foi clicado é um botao
     const actions ={
         next(){
+            if(!isValid()){
+                return 
+            };
             currentStep++;
         },
         prev(){
@@ -30,6 +33,15 @@ form.addEventListener('click', (e) =>{
 
 form.addEventListener('submit',(e)=>{
     e.preventDefault()
+
+    //FormData é um dicionario que armazena todos os valores do formulario por id
+    // Exemplo com o id name vai estar salvo o dado inserido lá
+    // {name: "Exemplo de nome"}
+    // Acessado atraves do metodo get igual no python
+    
+    const data = new FormData(form)
+    alert(`Obrigado ${data.get('name')} !`)
+    window.location.reload(true)
 })
 
 // uptade do formulario
@@ -59,3 +71,27 @@ function uptadeProgressStep(){
         }
     })
 };
+
+//validando o formulario
+
+function isValid(){
+    // Pegamos qual formulario esta sendo preenchido (1,2 ou 3)
+    const currentFormStep = formSteps[currentStep]
+    // Agora para cada campo de cada formulario 
+    const formFields = [...currentFormStep.querySelectorAll('input'),...currentFormStep.querySelectorAll('textarea')]
+
+    //Para cada campo ele verifica se o campo não está vazio
+    return formFields.every((input) => input.reportValidity())
+}
+
+//animation
+
+formSteps.forEach(formStep =>{
+    function addHide(){
+        formStep.classList.add('hide');
+    }
+    formStep.addEventListener('animationend', () =>{
+        addHide();
+        formStep[currentStep].classList.remove('hide')
+    })
+})

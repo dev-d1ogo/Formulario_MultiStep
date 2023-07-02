@@ -10,6 +10,10 @@ label{
     color: var(--base-gray-400);
 }
 
+.step-form.active{
+    display: block;
+}
+
 input, textarea{
     margin-top: 0.4rem;
     width: 100%;
@@ -28,12 +32,5 @@ textarea::placeholder{
     color: var(--base-gray-200);
 }
 
-.step-form{
-    display: none;
-}
-
-.step-form.active{
-    display: block;
-}
 
 

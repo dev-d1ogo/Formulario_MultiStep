@@ -36,5 +36,31 @@ body{
 .container{
   padding: 32px;
   border: 1px solid var(--base-gray-100);
+  overflow: hidden;
 }
 
+@keyframes start {
+  0%{
+    scale: .7;
+    opacity: 0;
+  }
+}
+
+.step-form.active{
+  animation: start 200ms 100ms ease-in-out backwards;
+}
+
+@keyframes slideout {
+  100%{
+    transform: translateX(50%);
+    opacity: 0;
+  }
+}
+
+.step-form{
+  animation: slideout 200ms ease-in-out forwards;
+}
+
+.hide{
+  display: none;
+}
