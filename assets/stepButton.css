@@ -1,0 +1,49 @@
+.step-button{
+    display: flex;
+    justify-content: space-between;
+    right: 0;
+    margin-top: 3.2rem;
+}
+
+/*
+    Resumo do que foi feito aqui:
+        o justify-content: space-between; -> está preparando o conteudo da div para outro botao o "voltar"
+        a classe justify-end é uma classe utilitaria para mesclar o space-between e alinhar o botao "continuar" com o flex-end
+*/
+.justify-end{
+    justify-content: flex-end;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    padding: 1.6rem 3.2rem;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    min-width: 1.5rem;
+}
+
+.first{
+    color: var(--base-white);
+    background-color: var(--produto-purple-mid);
+    cursor: pointer;
+    order: 1;
+    
+}
+
+.first:hover{
+    background-color: var(--produto-purple-light);
+}   
+
+.second{
+    color: var(--produto-purple-mid);
+    background-color: var(--base-white);
+    border: 1px solid var(--produto-purple-mid);
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+}

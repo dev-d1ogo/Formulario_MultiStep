@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/formHeader_step1.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap" rel="stylesheet">
@@ -19,24 +19,123 @@
     
 </head>
 <body>
-    <form action=""></form>
-        <div class="container">
+   <form>
+    <div class="container">
             <div class="steps">
-                <strong class="done">Contato</strong>
+                <strong class="active">Contato</strong>
                 <img src="./assets/icons.svg" alt="">
-                <strong class="active">Empresa</strong>
+                <strong >Empresa</strong>
                 <img src="./assets/icons.svg" alt="">
                 <strong>Projeto</strong>
             </div>
 
-            <div class="step-form">
+            <div class="step-form active">
+                <div class="content">
+                    <div class="input-wrapper">
+                        <label for="name">Nome</label>
+                        <input 
+                            type="text" 
+                            name="name" 
+                            id="name" 
+                            placeholder="Digite seu nome" 
+                            required>
+                    </div>
+                    
+                    <div class="input-wrapper">
+                        <label for="phone">Telefone</label>
+                        <input 
+                            type="text" 
+                            name="phone" 
+                            id="phone" 
+                            placeholder="(XX)(XXXXX-XXXX)" 
+                            onkeypress="return /\d/ .test(event.key)"
+                            >
+                            <!--
+                                onkeypress: 
+                                    Sempre que uma tecla for clicada ele recebe uma função que retorna se o dado teclado pode ser aceito
+                                        onkeypress = 'return true' -> aceita qualquer valor digitado
+                                        onkeypress = 'return false' -> nao aceita nenhum valor digitado
+                                        .test(event.key) -> verifica a tecla digitada e /\d/ é um Regex que so permite doubles
+                            -->
+                    </div>
+                    
+                    <div class="input-wrapper">
+                        <label for="name">E-mail</label>
+                        <input 
+                            type="email"
+                            name="email" 
+                            id="email" 
+                            placeholder="Digite seu e-mail" 
+                            required>
+                    </div>
+                </div>
 
+                <div class="step-button justify-end">
+                    <button type="button" class="button first" data-action="next">CONTINUAR</button>
+                </div>
+            </div>
+
+            <div class="step-form">
+                <div class="content">
+                    <div class="input-wrapper">
+                        <label for="bussines-name">Nome da Empresa</label>
+                        <input 
+                            type="text" 
+                            name="bussines-name" 
+                            id="bussines-name" 
+                            placeholder="Digite o nome da empresa" 
+                            required>
+                    </div>
+                    
+                    <div class="input-wrapper">
+                        <label for="number-colabs">Número de funcionários</label>
+                        <input 
+                            type="text" 
+                            name="number-colabs" 
+                            id="number-colabs" 
+                            placeholder="Digite o numero de colaboradores" 
+                            onkeypress="return /\d/ .test(event.key)"
+                            >
+                    </div>
+                    
+                    <div class="input-wrapper">
+                        <label for="bussines-about">Nome da Empresa</label>
+                        <textarea 
+                        type="text" 
+                        name="bussines-about" 
+                        id="bussines-about" 
+                        placeholder="Fale um pouco sobre seus produtos ou serviços" 
+                        ></textarea> 
+                    </div>
+
+                </div>
+
+                <div class="step-button">
+                    <button type="button" class="button first" data-action="next">CONTINUAR</button>
+                    <button type="button" class="button second" data-action="prev">VOLTAR</button>
+                </div>
             </div>
         
-            <div class="step-button">
-                <button>CONTINUAR</button>
+            <div class="step-form">
+                <div class="content">
+                    <div class="input-wrapper">
+                        <label for="bussines-objetive">Objetivos do projeto</label>
+                        <textarea 
+                        type="text" 
+                        name="bussines-objetive" 
+                        id="bussines-objetive" 
+                        placeholder="Descreva quais os objetivos desse projeto" 
+                        ></textarea> 
+                    </div>
+                </div>
+
+                <div class="step-button">
+                    <button type="submit" class="button first">ENVIAR PROPOSTA</button>
+                    <button type="button" class="button second" data-action="prev">VOLTAR</button>
+                </div>
             </div>
         </div>
-    </form>
+   </form>
 </body>
+<script src="./script.js"></script>
 </html>

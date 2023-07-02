@@ -1,0 +1,39 @@
+.content{
+    margin: 3.2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+label{
+    font-weight: 700;
+    color: var(--base-gray-400);
+}
+
+input, textarea{
+    margin-top: 0.4rem;
+    width: 100%;
+    display: grid;
+    gap: 1.6rem;
+    padding: 1.6rem;
+    border: 1px solid var(--base-gray-100);
+}
+
+textarea{
+    height: 100px;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color: var(--base-gray-200);
+}
+
+.step-form{
+    display: none;
+}
+
+.step-form.active{
+    display: block;
+}
+
+
